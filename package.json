@@ -1,0 +1,25 @@
+{
+  "name": "@wefctory-dev/speccio",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "scripts": {
+    "build": "rm -rf ./build && tsc"
+  },
+  "bin": {
+    "speccio": "build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.18.4",
+    "axios": "^1.8.4",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.13",
+    "chalk": "^5.4.1",
+    "typescript": "^5.8.2"
+  }
+}
