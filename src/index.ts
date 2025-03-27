@@ -2,7 +2,7 @@
 import { program } from 'commander';
 import { downloadSpecFile } from './download-spec';
 
-program.version('1.1.0').description('openapi 명세 파일로 client 함수 만들기');
+program.version('1.1.1').description('openapi 명세 파일로 client 함수 만들기');
 
 program
   .command('download')

@@ -22,6 +22,13 @@ export async function downloadSpecFile(options: any) {
     '결과파일이 저장될 경로를 입력하세요 ( ex. ./src/lib/fetch-client )',
   ];
 
+  // rl.question을 프로미스화하는 헬퍼 함수
+  const questionAsync = (query: string): Promise<string> => {
+    return new Promise((resolve) => {
+      rl.question(query, resolve);
+    });
+  };
+
   try {
     await askQuestion(0);
   } catch (error) {
@@ -32,13 +39,6 @@ export async function downloadSpecFile(options: any) {
     rl.close(); // 모든 작업 완료 또는 에러 발생 시 readline 인터페이스 종료
     console.log('\n스크립트를 종료합니다.');
   }
-
-  // rl.question을 프로미스화하는 헬퍼 함수
-  const questionAsync = (query: string): Promise<string> => {
-    return new Promise((resolve) => {
-      rl.question(query, resolve);
-    });
-  };
 
   async function askQuestion(index: number) {
     if (index >= questions.length) {
