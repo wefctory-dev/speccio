@@ -78,6 +78,7 @@ export async function downloadSpecFile(options: any) {
 
               fs.rmSync(`${outputDir}/.openapi-generator`, { recursive: true, force: true });
               fs.unlinkSync(`${outputDir}/.openapi-generator-ignore`);
+              fs.unlinkSync(`${process.cwd()}/openapitools.json`);
               rl.close();
             },
           );
